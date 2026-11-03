@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resistencia del concreto | Proyecto de Machine Learning</title>
+  <meta name="description" content="Estimación preliminar de la resistencia del concreto según su composición y edad.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="predict.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="./"><span class="brand-icon">C</span> Concreto <span class="brand-light">/ laboratorio</span></a><a href="https://github.com/cristiancabezas13/ProyectoFinal" target="_blank" rel="noopener">Ver proyecto ↗</a></header>
+<main>
+  <div class="intro"><span class="eyebrow">APRENDIZAJE SUPERVISADO · REGRESIÓN</span><h1>De la mezcla<br>a una estimación.</h1><p>Explora la resistencia a compresión del concreto a partir de sus ingredientes y su edad.</p></div>
+  <div id="load-status" role="status">Cargando el modelo entrenado…</div>
+  <div class="workspace">
+    <section class="card input-card" aria-labelledby="mix-title">
+      <div class="section-title"><div><span class="step">01 / COMPOSICIÓN</span><h2 id="mix-title">Define tu mezcla</h2></div><span class="unit-tag">kg por m³</span></div>
+      <p class="muted">Introduce cantidades por metro cúbico. La edad se indica en días.</p>
+      <div class="examples"><label for="example">Cargar una receta de ejemplo</label><select id="example"><option value="">Seleccionar…</option></select></div>
+      <form id="prediction-form"><div id="fields" class="fields"></div><button id="submit" type="submit" disabled>Estimar resistencia <span>→</span></button></form>
+    </section>
+    <aside class="result-column">
+      <section class="card result-card" aria-labelledby="result-title">
+        <span class="step">02 / RESULTADO</span><h2 id="result-title">Resistencia estimada</h2>
+        <div id="result" class="result" aria-live="polite">— <span>MPa</span></div>
+        <p id="result-note">Carga una receta y pulsa «Estimar resistencia».</p>
+        <div id="validation" role="alert"></div>
+        <div class="result-divider"></div><p class="result-explanation">MPa expresa la resistencia a compresión. Esta estimación es orientativa y no reemplaza un ensayo de laboratorio.</p>
+      </section>
+      <section class="card evidence"><span class="step">03 / EVIDENCIA</span><h2>Evaluado con recetas nuevas</h2><div class="stats"><div><strong id="mae">—</strong><span>MAE · MPa</span></div><div><strong id="r2">—</strong><span>R² · prueba</span></div></div><p id="evaluation-note" class="muted"></p><p class="small">El MAE es el error absoluto promedio en prueba. No es un margen garantizado para cada predicción. R² no es un porcentaje de aciertos.</p></section>
+    </aside>
+  </div>
+  <section class="method"><div><span class="step">EL MODELO</span><h2>Una predicción, paso a paso.</h2></div><div><h3>1. Datos reales</h3><p>Ensayos de concreto publicados por I-Cheng Yeh en UCI. Ocho entradas y una resistencia medida.</p></div><div><h3>2. Evaluación separada</h3><p>Las recetas de prueba no aparecen en entrenamiento. La selección usa validación cruzada por recetas.</p></div><div><h3>3. Uso responsable</h3><p>El modelo estima. No valida diseños estructurales ni garantiza resultados en otros laboratorios.</p></div></section>
+  <details><summary>Qué significan los ingredientes y los rangos</summary><p>Cemento: aglutinante. Escoria y ceniza volante: adiciones minerales. Superplastificante: aditivo para trabajar la mezcla. Agregado grueso: grava. Agregado fino: arena. Los ceros son válidos para componentes opcionales.</p><p>Los rangos mostrados proceden del entrenamiento. Una combinación dentro de esos rangos no garantiza una receta físicamente adecuada. No introduzcas cantidades en gramos ni porcentajes.</p><p id="model-note"></p></details>
+</main>
+<footer><span>Proyecto final · Machine Learning</span><a href="https://doi.org/10.24432/C5PK67" target="_blank" rel="noopener">Datos: Yeh (1998), UCI · CC BY 4.0 ↗</a></footer>
+</body></html>
