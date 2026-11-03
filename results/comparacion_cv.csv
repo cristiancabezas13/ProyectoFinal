@@ -1,0 +1,4 @@
+modelo,MAE_CV,desv_CV,parametros
+Random Forest,4.701949944087397,0.452513471774504,"{'max_depth': None, 'min_samples_leaf': 2}"
+Árbol,5.973282743703428,0.4311590953354644,"{'max_depth': None, 'min_samples_leaf': 2}"
+Media (referencia),13.21715973370539,0.7066881391824266,Media del entrenamiento

@@ -1,0 +1,35 @@
+{
+  "modelo": "Random Forest",
+  "seed": 42,
+  "sklearn_version": "1.9.1",
+  "filas_originales": 1030,
+  "duplicados": 25,
+  "filas_limpias": 1005,
+  "train_filas": 810,
+  "test_filas": 195,
+  "train_grupos": 342,
+  "test_grupos": 86,
+  "hiperparametros": {
+    "max_depth": null,
+    "min_samples_leaf": 2
+  },
+  "mae_cv": 4.701949944087397,
+  "std_cv": 0.452513471774504,
+  "train": {
+    "MAE": 1.7147041689632878,
+    "RMSE": 2.604518846408193,
+    "R2": 0.9744847080968001
+  },
+  "test": {
+    "MAE": 4.364320876425927,
+    "RMSE": 5.666874963243871,
+    "R2": 0.8769629905713652
+  },
+  "baseline_test": {
+    "MAE": 12.920797058300723,
+    "RMSE": 16.158086282681655,
+    "R2": -0.00029558456617495565
+  },
+  "fuente": "https://doi.org/10.24432/C5PK67",
+  "sha256_excel": "710076c66b9ca3f8050e7942f3dcbdbe04013534daeb0077ffd3079a52d8e0c4"
+}
