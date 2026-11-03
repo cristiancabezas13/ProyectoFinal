@@ -5,6 +5,7 @@ Proyecto final de Machine Learning. Predice la resistencia a compresión de una 
 - [Aplicación](https://cristiancabezas13.github.io/ProyectoFinal/)
 - [Abrir notebook en Google Colab](https://colab.research.google.com/github/cristiancabezas13/ProyectoFinal/blob/main/model_development.ipynb)
 - Notebook: `model_development.ipynb` (incluye código ejecutado, tablas, gráficas y justificación).
+- https://1drv.ms/v/c/5370ed1f891371e0/IQCjbTx07WWITJa70NTpgR_tAcvxDH-M9SUw7pM2fNWuHHI?e=6GMSyg
 
 ## Datos y preprocesamiento
 
